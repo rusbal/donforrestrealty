@@ -2,6 +2,9 @@
 
 import os
 
+from .secrets.db import *
+from .secrets.secret import *
+
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..', '..')
 
 DEBUG = True
@@ -16,28 +19,6 @@ MANAGERS = ADMINS
 # Default to dummy email backend. Configure dev/production/local backend
 # as per https://docs.djangoproject.com/en/dev/topics/email/#email-backends
 EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'wagtaildemo',
-#         'USER': 'postgres',
-#         'PASSWORD': '',
-#         'HOST': '',  # Set to empty string for localhost.
-#         'PORT': '',  # Set to empty string for default.
-#         'CONN_MAX_AGE': 600,  # number of seconds database connections should persist for
-#     }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rusbal$dfr',
-        'USER': 'rusbal',
-        'PASSWORD': 'default',
-        'HOST': 'mysql.server',
-        'PORT': '',
-    }
-}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -106,12 +87,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
 )
-
-# ** You would never normally put the SECRET_KEY in a public repository,
-# ** however this is a demo app so we're using the default settings.
-# ** Don't use this key in any non-demo usage!
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'wq21wtjo3@d_qfjvd-#td!%7gfy2updj2z+nev^k$iy%=m4_tr'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

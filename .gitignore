@@ -5,3 +5,5 @@
 /media
 /Vagrantfile.local
 /.git.OLD
+*.swp
+wagtaildemo/settings/secrets
